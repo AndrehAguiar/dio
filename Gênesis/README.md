@@ -11,4 +11,4 @@
 <h6></h6>
 <span class="text-corp">Front-End Developer, B8One</span>
 <a href="https://www.linkedin.com/in/gabrielapinheiro129/" class="link-social" target="_blank">Gabriela Pinheiro</a>
-<a href="http://www.github.com/SpruceGabriela" class="link-social" target="_blank"><img src="https://image.flaticon.com/icons/png/512/25/25657.png" /></a>
+<a href="http://www.github.com/SpruceGabriela" class="link-social" target="_blank"><img width="80px" src="https://image.flaticon.com/icons/png/512/25/25657.png" /></a>
