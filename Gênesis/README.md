@@ -9,7 +9,8 @@
 <h6>Básico</h6>
 <h6>ESPECIALISTA</h6>
 
-<span class="text-corp">Front-End Developer, B8One</span>
+<span>Front-End Developer, B8One</span>
+<h6>Gabriela Pinheiro</h6>
 <a href="https://www.linkedin.com/in/gabrielapinheiro129/" class="link-social" target="_blank">
-<h6 >Gabriela Pinheiro</h6> </a>
+<img width="20px" src="https://image.flaticon.com/icons/png/512/174/174857.png"></a>
 <a href="http://www.github.com/SpruceGabriela" class="link-social" target="_blank"><img width="20px" src="https://image.flaticon.com/icons/png/512/25/25657.png" /></a>
