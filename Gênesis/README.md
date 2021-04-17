@@ -5,8 +5,8 @@
 ---
 
 <h6>DESCRIÇÃO</h6><p>Nesse projeto, o desafio será criar um jogo Gênesis utilizando apenas HTML, CSS e Javascript de forma introdutória, sendo o principal conceito, CSS Grid, manipulação de Array e Arrow Functions.</p>
-<h6>Front-End</h6>
-<h6>Básico</h6>
+<h6>Front-End | Básico</h6>
+<h6>HTML | CSS | JavaScript</h6>
 <h6>ESPECIALISTA</h6>
 
 <span>Front-End Developer, B8One</span>
