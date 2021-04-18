@@ -1,6 +1,6 @@
 # Criando seu próprio jogo da velha com HTML e Javascript
 
-### ?
+### A implementação da checagem da jogada foi feita pelos métodos "every" e "includes", verificando as regras definidas em um objeto com todas as possibilidades de vitória.
 
 ---
 
