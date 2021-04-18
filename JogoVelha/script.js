@@ -1,7 +1,9 @@
+let check = false;
 let users = ["X", "O"];
 let userX = [];
 let userO = [];
 let user;
+let winner;
 
 let rules = {
     "line1": [1, 2, 3],
@@ -15,20 +17,86 @@ let rules = {
 }
 
 let selectUser = () => {
-    user = Math.floor((Math.random() * 1) + 1);
+    user = Math.floor(Math.random() * 2);
     user = users[user]
+    document.querySelector("#player").innerHTML = user;
+}
+
+let changePlayer = () => {
+    user = user === "X" ? "O" : "X";
+    document.querySelector("#player").innerHTML = user;
+}
+
+let checkPlayerX = (value, idx, arr) => {
+    return userX.includes(value);
+}
+
+let checkPlayerO = (value, idx, arr) => {
+    return userO.includes(value);
+
+}
+let restart = () => {
+    check = false;
+    userX = [];
+    userO = [];
+    user = "";
+    winner = "";
+    let grid = document.querySelector(".content").children;
+    for (let i = 0; i < grid.length; i++) {
+        grid[i].innerHTML = "";
+    }
+    selectUser();
+    document.getElementById("result").style.display = 'none';
+
+}
+
+let checkGame = (user) => {
+    let grid = document.querySelector(".content").children;
+    let result = document.getElementById("result");
+
+    for (let i = 0; i < Object.keys(rules).length; i++) {
+        let rule = rules[Object.keys(rules)[i]]
+
+        if (user === "X") {
+            check = rule.every(checkPlayerX);
+            winner = user;
+
+        } else {
+            check = rule.every(checkPlayerO);
+            winner = user;
+
+        }
+        if (check) {
+            result.innerHTML = `Player "${winner}" WIN`;
+            result.innerHTML += `<button type="button" onclick="restart()">OK</button>`
+            result.style.display = "block";
+            break;
+        }
+
+    }
+    if (!check && userX.length + userO.length === grid.length) {
+        result.innerHTML = `GAME DRAW!!!`;
+        result.innerHTML += `<button type="button" onclick="restart()">OK</button>`
+        result.style.display = "block";
+    }
+    changePlayer();
 }
 
 let selectElement = (id) => {
-    if (user === 0) {
-        userX.push(id);
-    } else {
-        userO.push(id)
+    if (!check) {
+        if (user === "X") {
+            userX.push(parseInt(id));
+        } else {
+            userO.push(parseInt(id))
+        }
+        let el = document.getElementById(id);
+        if (el.innerHTML === "") {
+            el.innerHTML = user;
+            checkGame(user);
+        }
     }
-    user = user === "X" ? "O" : "X";
-    document.querySelector("#player").innerHTML = user;
-    document.getElementById(id).innerHTML = user;
 }
-
-selectUser();
-document.querySelector("#player").innerHTML = user;
+let start = () => {
+    document.getElementById("cover").style.display = "none";
+    selectUser();
+}
