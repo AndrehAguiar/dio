@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+body {
+    background-color: black;
+    overflow: hidden;
+    font-family: 'Zen Dots', cursive;
+    color: white;
+    margin: 0;
+}
+
+.cover {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+}
+
+.cover h1 {
+    margin: 40vh auto 0;
+}
+
+.cover h2 {
+    margin: 0 auto;
+}
+
+.start {
+    border: none;
+    font-family: 'Zen Dots', cursive;
+    font-size: 300%;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.hero {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.score {
+    position: absolute;
+}
