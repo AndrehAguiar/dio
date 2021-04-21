@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 body {
-    background-color: black;
+    background-image: url("img/bg.gif");
+    background-blend-mode: soft-light;
     overflow: hidden;
     font-family: 'Zen Dots', cursive;
     color: white;
