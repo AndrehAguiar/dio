@@ -8,7 +8,7 @@ public class ConnectorJDBC {
     public static void main(String[] args) throws SQLException {
 
         String urlConnection = "jdbc:mysql://localhost/digitalinnovation";
-        try (Connection conn =DriverManager.getConnection(urlConnection, "root", "password")) {
+        try (Connection conn =DriverManager.getConnection(urlConnection, "digital_innovation", "pass")) {
             System.out.println("CONNECTION SUCCESS!!");
         }catch (SQLException e){
             System.out.println("CONNECTION FAILED!!");
@@ -18,8 +18,8 @@ public class ConnectorJDBC {
         String dataBaseAddress = "localhost";
         String port = "3306";
         String dataBaseName = "digitalinnovation";
-        String user = "root";
-        String password = "password";
+        String user = "digital_innovation";
+        String password = "@1q2w3e4r";
 
         StringBuilder sb = new StringBuilder( "jdbc:")
                 .append(driver).append("://")
