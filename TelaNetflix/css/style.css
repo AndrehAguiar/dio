@@ -1,0 +1,189 @@
+:root {
+    --vermelho: #E50914;
+    --preto: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--preto);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+
+/* GERAL */
+
+hr {
+    width: 80%;
+    margin: auto;
+    border-color: darkgrey;
+}
+
+.container {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* HEADER STYLE */
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: var(--preto);
+    z-index: 999;
+}
+
+header .logo {
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+}
+
+header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+    font-family: "Trebuchet MS", Arial;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+
+/* FILME PRINCIPAL */
+
+.filme-principal {
+    font-family: "Trebuchet MS", Arial;
+    font-size: 16px;
+    line-height: 150%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-image: linear-gradient( rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url(../img/principal.jpg);
+}
+
+.filme-principal .descricao {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo {
+    margin-top: 15%;
+    font-size: 40px;
+}
+
+.filme-principal .botao {
+    background-color: rgba(0, 0, 0, .50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.filme-principal .botao:hover {
+    color: black;
+    background-color: white;
+}
+
+.filme-principal .botao i {
+    margin-right: 8px;
+}
+
+.filme-principal .container {
+    text-align: justify;
+    width: 50%;
+    min-width: 400px;
+}
+
+.carrosel .titulo {
+    padding: 25px 0;
+    font-family: "Trebuchet MS", Arial;
+    font-size: 40px;
+}
+
+.box-filme {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 999;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    font-family: "Arial Black";
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.close:hover {
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.modal div:last-child {
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal article {
+    width: 45%;
+    line-height: 200%;
+    font-family: "Arial";
+    font-size: 20px;
+}
+
+.modal article ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.modal article ul li:last-of-type {
+    cursor: pointer;
+}
+
+.modal p {
+    margin-bottom: 25px;
+}

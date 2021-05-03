@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- owl css -->
+    <link rel="stylesheet" type="text/css" href="css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h2 class="logo">NETFLIX</h2>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#destaques">Destaques</a>
+                <a href="#series">Séries</a>
+                <a href="#filmes">Filmes</a>
+                <a href="#documentarios">Documentários</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <a name="inicio"></a>
+        <div class="filme-principal">
+
+            <div class="container">
+                <h3 class="titulo">Um Homem Comum</h3>
+
+                <p class="descricao">
+                    A história segue um criminoso de guerra na clandestinidade (Kingsley), que inicia um relacionamento com sua empregada, uma atriz islandesa em ascensão. Quando as buscas para o encontrarem ficam mais intensas, ele percebe que ela é única pessoa em que
+                    pode confiar.
+                </p>
+
+                <div class="botoes">
+                    <button role="button" class="botao" onclick="showTrailer()">
+                        <i class="fas fa-play"> </i> ASSISTIR AGORA
+                    </button>
+                    <button role="button" class="botao" onclick="showDetails()">
+                        <i class="fas fa-info-circle"> </i> MAIS INFORMAÇÕES
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- DESTAQUES -->
+    <section class="carrosel">
+        <a name="destaques"></a>
+        <div class="container">
+            <h3 class="titulo">Destaques</h3>
+            <div class="carrosel-filmes">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class="box-filme" src="img/min0.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min1.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min2.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min3.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min4.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min5.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min6.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min7.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min8.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min9.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <!-- SERIES -->
+    <section class="carrosel">
+        <a name="series"></a>
+        <div class="container">
+            <h3 class="titulo">Séries</h3>
+            <div class="carrosel-filmes">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class="box-filme" src="img/min20.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min21.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min12.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min13.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min14.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min15.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min16.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <!-- FILMES -->
+    <section class="carrosel">
+        <div class="container">
+            <h3 class="titulo">Filmes</h3>
+            <a name="filmes"></a>
+            <div class="carrosel-filmes">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class="box-filme" src="img/min10.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min11.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min17.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min18.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min19.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min20.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <section class="carrosel">
+        <div class="container">
+            <h3 class="titulo">Documentários</h3>
+            <a name="documentarios"></a>
+            <div class="carrosel-filmes">
+                <div class="owl-carousel owl-theme">
+                    <div class="item"><img class="box-filme" src="img/min21.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min22.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min23.jpg" alt=""></div>
+                    <div class="item"><img class="box-filme" src="img/min24.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+
+    <script src="https://kit.fontawesome.com/6156bec7db.js" crossorigin="anonymous"></script>
+    <script src="js/owl/jquery.min.js"></script>
+    <script src="js/owl/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@media screen and (max-width:700px) {
+    nav {
+        font-size: 80%;
+        padding-bottom: 15px;
+        overflow: hidden;
+    }
+    main {
+        width: 100%;
+    }
+    header .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .botao {
+        margin-top: 5px;
+        min-width: 200px;
+    }
+    .filme-principal .titulo {
+        font-size: 180%;
+    }
+    .filme-principal .container {
+        width: 70%;
+        min-width: 250px;
+        margin: auto;
+    }
+    .modal {
+        overflow: scroll;
+    }
+    .modal div:last-child {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+    .modal article {
+        width: 80%;
+        padding-bottom: 25px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .descricao {
+        width: 70%;
+    }
+}
