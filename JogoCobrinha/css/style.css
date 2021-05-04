@@ -13,9 +13,13 @@ body {
     font-family: 'Fredoka One', cursive;
 }
 
-h1 {
+h1,
+h2 {
     color: whitesmoke;
     text-transform: uppercase;
     padding: 25px;
+}
+
+h1 {
     font-size: 50pt
 }
