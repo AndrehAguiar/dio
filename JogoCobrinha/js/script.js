@@ -1,9 +1,18 @@
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
-let box = 32;
-let snake = [];
-let food = [];
 let direction = "right";
+let flag = false;
+let snake = [];
+let score = 0;
+let level = 1;
+let box = 32;
+let dificult = 300;
+let food;
+let game;
+
+const getPosition = () => {
+    return Math.floor(Math.random() * 15 + 1) * box
+}
 
 // Define o tamanho dos nós da "snake"
 snake[0] = {
@@ -12,8 +21,8 @@ snake[0] = {
 }
 
 food = {
-    x: Math.floor(Math.random() * 15 + 1) * box,
-    y: Math.floor(Math.random() * 15 + 1) * box
+    x: getPosition(),
+    y: getPosition()
 }
 
 // Desenha o campo de jogo
@@ -34,6 +43,7 @@ const createSnake = () => {
 
 // Desenha a comida
 const createFood = () => {
+
     context.fillStyle = "darkred";
     context.fillRect(food.x, food.y, box, box);
 }
@@ -54,6 +64,7 @@ const updateDirection = (event) => {
             direction = direction == "up" ? direction : "down";
             break;
         default:
+            play();
             break;
     }
 }
@@ -71,7 +82,6 @@ const gameOver = () => {
 
 // Verifica se a posição é válida para continuar o jogo
 const checkPosition = () => {
-    let flag = false;
     switch (direction) {
         case "right":
             flag = snake[0].x > 15 * box;
@@ -89,15 +99,59 @@ const checkPosition = () => {
     if (flag) gameOver();
 }
 
+const updateScore = () => {
+    score += 1;
+    let placar = document.getElementById('score');
+    placar.innerHTML = score;
+}
+
+const levelUp = () => {
+
+    context.font = "50pt Fredoka One";
+    context.fillStyle = "red";
+    context.textAlign = "center";
+    context.fillText(`Level UP!${level}`, canvas.width / 2, canvas.height / 2)
+
+
+}
+
+// Verifica a condição do level
+// Se a "snake" > que 10 + level -> Up level
+const checkLevel = () => {
+    if (snake.length >= (3 + level)) {
+        level++;
+
+        let spLevel = document.getElementById("level");
+        spLevel.innerHTML = level;
+        snake = snake.splice(0, level);
+        dificult *= 1.01;
+        createBG();
+        createSnake();
+        levelUp();
+    }
+}
+
 // Define o movimento da "snake"
 const movieSnake = (snakeX, snakeY) => {
 
-    snake.pop();
+    if (food.x == snake[0].x & food.y == snake[0].y) {
+
+        food.x = getPosition();
+        food.y = getPosition();
+
+        updateScore();
+        checkLevel();
+
+    } else {
+
+        snake.pop();
+    }
 
     let newHead = {
         x: snakeX,
         y: snakeY
     }
+
     snake.unshift(newHead);
 
 }
@@ -113,8 +167,10 @@ const checkDirection = () => {
     if (direction == "up") snakeY -= box;
     if (direction == "down") snakeY += box;
 
-    movieSnake(snakeX, snakeY);
+    flag = snake.filter(position => position.x === snake[0].x & position.y === snake[0].y).length > 1;
+    if (flag) gameOver();
 
+    movieSnake(snakeX, snakeY);
 }
 
 // Inicia o jogo
@@ -126,9 +182,16 @@ const startGame = () => {
     createFood();
 }
 
+// Diplay a tela do jogo
+const play = () => {
+
+    document.querySelector(".play").remove();
+    document.querySelector(".canvas").style.display = "block";
+    document.querySelector(".placar").style.display = "flex";
+
+    // Define os frames/s
+    game = setInterval(startGame, dificult);
+}
+
 // Escuta as teclas
 document.addEventListener('keydown', updateDirection);
-
-
-// Define os frames/s
-let game = setInterval(startGame, 100);
