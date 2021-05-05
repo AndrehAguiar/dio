@@ -118,7 +118,7 @@ const levelUp = () => {
 // Verifica a condição do level
 // Se a "snake" > que 10 + level -> Up level
 const checkLevel = () => {
-    if (snake.length >= (3 + level)) {
+    if (snake.length >= (10 + level)) {
         level++;
 
         let spLevel = document.getElementById("level");
