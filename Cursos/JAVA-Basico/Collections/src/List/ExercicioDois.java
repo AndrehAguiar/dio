@@ -16,8 +16,8 @@ public class ExercicioDois {
                     "Devia para a vítima?",
                     "Já trabalhou com a vítma?"));
         }};
-        for (String s : questions) {
-            System.out.println(s);
+        for (String question : questions) {
+            System.out.println(question + "(Responda digitando SIM ou NÃO)");
             String reply = scan.next();
             if (reply.toLowerCase(Locale.ROOT).equals("sim")) {
                 out += 1;
