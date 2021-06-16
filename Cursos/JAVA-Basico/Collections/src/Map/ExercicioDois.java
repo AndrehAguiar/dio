@@ -55,6 +55,11 @@ public class ExercicioDois {
             System.out.println("\n");
         }
 
+        System.out.println("\nOrdenação pela quantidade de livros: ");
+        Map<Pessoa, Set<Livro>> livrosPessoaTree = new TreeMap<>();
+        livrosPessoaTree.putAll(livrosPessoa);
+        livrosPessoaTree.entrySet().forEach(System.out::println);
+
     }
 }
 
@@ -62,5 +67,15 @@ class LivrosComparatorPaginas implements Comparator<Livro> {
     @Override
     public int compare(Livro l1, Livro l2) {
         return Integer.compare(l1.getPaginas(), l2.getPaginas());
+    }
+}
+class LivrosComparatorQuantidade implements Comparator<Map<Pessoa, Set<Livro>>>{
+
+    @Override
+    public int compare(Map<Pessoa, Set<Livro>> o1, Map<Pessoa, Set<Livro>> o2) {
+        int size = Integer.compare(o1.values().size(), o2.values().size());
+        if(size != 0)
+            return size;
+        return 0;
     }
 }
