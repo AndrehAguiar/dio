@@ -1,0 +1,11 @@
+.crop {
+    overflow: hidden;
+}
+
+.crop div {
+    width: 100px;
+}
+
+.fa-star {
+    color: gold;
+}
