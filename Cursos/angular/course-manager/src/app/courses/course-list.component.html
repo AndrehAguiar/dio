@@ -1,8 +1,10 @@
 <div class="container">
     <h2> Course List </h2>
-    <div class="col-sm-10">
-        <label for="filter">Filter by:</label>
-        <input type="text" [(ngModel)]="filter" class="form-control">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="filter">Filter by:</label>
+        <div class="col-sm-10">
+            <input type="text" [(ngModel)]="filter" class="form-control">
+        </div>
     </div>
     <table class="table table-striped" id="courses-list">
         <thead>
@@ -26,7 +28,9 @@
                 <td>
                     <app-star [rating]="course.rating"></app-star>
                 </td>
-                <td></td>
+                <td>
+                    <a [routerLink]="['/courses/info',course.id]" class="btn btn-primary">Edit</a>
+                </td>
             </tr>
         </tbody>
     </table>

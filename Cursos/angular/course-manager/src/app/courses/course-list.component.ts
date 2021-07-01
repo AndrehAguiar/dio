@@ -4,7 +4,6 @@ import { Course } from "./course";
 import { ASTWithSource } from '@angular/compiler';
 
 @Component({
-  selector: 'app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./courses-list.component.css']
 })
