@@ -1,4 +1,4 @@
-package innovation;
+package one.digital.innovation;
 
 import java.util.Objects;
 

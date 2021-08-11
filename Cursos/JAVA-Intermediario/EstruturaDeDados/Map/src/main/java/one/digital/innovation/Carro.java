@@ -1,8 +1,8 @@
-package innovation;
+package one.digital.innovation;
 
 import java.util.Objects;
 
-public class Carro {
+public class Carro implements Comparable<Carro>{
     private String marca;
 
     public Carro(String marca) {
@@ -35,5 +35,15 @@ public class Carro {
         return "Carro{" +
                 "marca='" + marca + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Carro o) {
+        if(this.marca.length() < o.marca.length()){
+            return -1;
+        }else if(this.marca.length() > o.marca.length()){
+            return 1;
+        }
+        return this.marca.compareTo(o.marca);
     }
 }
