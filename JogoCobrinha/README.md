@@ -1,4 +1,4 @@
-# Recriando a página inicial do Instagram
+# Recriando o jogo da cobrinha com JavaScript
 
 <h5>DESCRIÇÃO</h5>
 <p> Neste projeto foi desenvolvido de forma simples o clássico jogo da cobrinha utilizando HTML, CSS e JavaScript.</p>

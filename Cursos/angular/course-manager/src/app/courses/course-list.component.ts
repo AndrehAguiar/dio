@@ -41,6 +41,7 @@ export class CourseListComponent implements OnInit {
   }
 
   set filter(value: string) {
+    if(value === "") this.retrieveAll();
     this._filterBy = value;
     this.filterCourses = this._courses.filter(
       (course: Course) => course.name.toLocaleLowerCase()
